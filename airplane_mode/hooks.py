@@ -4,6 +4,8 @@ app_publisher = "Yim Sovandara"
 app_description = "Airplane Mode System"
 app_email = "yimsovandara123@gmail.com"
 app_license = "mit"
+
+
 # required_apps = []
 
 # Includes in <head>
@@ -226,4 +228,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-

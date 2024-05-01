@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rental Agreement</title>
+    <style>
+      .receipt-footer {
+        text-align: center;
+      }
+
+      .footer-note {
+        font-style: italic;
+        color: #666;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 650px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      .terms {
+        margin-top: 20px;
+        border-top: 1px solid #ccc;
+        padding-top: 20px;
+      }
+
+      .terms ol {
+        padding-left: 20px;
+      }
+
+      .terms ol li {
+        margin-bottom: 10px;
+      }
+
+      @media print {
+        .container {
+          margin: 0 auto;
+          border: none;
+          box-shadow: none;
+        }
+
+        .terms {
+          page-break-before: always;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>Date Created:</p>
+      <p>Invoice ID: <span>{{doc.name}}</span></p>
+
+      <h1>Paymnet Invoice</h1>
+      <table>
+        <tr>
+          <th>Payment Date:</th>
+          <td>{{doc.payment_date}}</td>
+        </tr>
+        <tr>
+          <th>Tenant Name:</th>
+          <td>{{doc.tenant}}</td>
+        </tr>
+        <tr>
+          <th>Shop Number:</th>
+          <td>{{doc.shop_number}}</td>
+        </tr>
+        <tr>
+          <th>Shop ID:</th>
+          <td>{{doc.shop_id}}</td>
+        </tr>
+
+        <tr>
+          <th>Rent Amount:</th>
+          <td>{{doc.rent_amount}} $</td>
+        </tr>
+      </table>
+      <div class="receipt-footer">
+        <p class="footer-note">
+          This is a computer-generated receipt and does not require a signature.
+        </p>
+        <p class="footer-note">Thank you for your payment</p>
+      </div>
+    </div>
+  </body>
+</html>

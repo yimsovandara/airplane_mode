@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Shadow Container</title>
+    <style>
+      .list_container {
+        width: 100%;
+        height: 180px;
+        background-color: white;
+        padding: 20px;
+        margin: 30px;
+        border-radius: 10px;
+        border: 1px solid;
+        border-color: #bdc3c7;
+        align-content: center;
+      }
+
+      .list_container p {
+        margin: 5px 0;
+      }
+      .view_flight {
+        position: absolute;
+
+        color: rgb(59, 138, 242);
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="list_container">
+      <h4 style="margin-top: -5px">{{doc.airplane}}</h4>
+      <p>
+        {{doc.source_airport}}&nbsp; <span>&#8594;</span>&nbsp;
+        {{doc.destination_airport}}
+      </p>
+      <p style="margin-bottom: 20px">
+        {{doc.date_of_departure}} / {{doc.time_of_departure}} /
+        {{frappe.utils.format_duration(doc.duration)}}
+      </p>
+      <!-- Link to view flight -->
+      <a href="{{doc.route}}" class="view_flight">View Flight</a>
+    </div>
+  </body>
+</html>

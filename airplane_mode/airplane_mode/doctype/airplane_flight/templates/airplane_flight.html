@@ -1,0 +1,40 @@
+{% extends "templates/web.html" %} {% block page_content %}
+<h1>{{ title }}</h1>
+<br />
+<h2>Flight Details</h2>
+<ul>
+  <li>Airline : &nbsp;{{doc.airplane}}</li>
+  <li>
+    {{doc.source_airport}}&nbsp; <span>&#8594;</span>&nbsp;
+    {{doc.destination_airport}}
+  </li>
+  <li>{{doc.date_of_departure}} / {{doc.time_of_departure}}</li>
+  <li>Duration :&nbsp; {{frappe.utils.format_duration(doc.duration)}}</li>
+  <br />
+</ul>
+
+<a
+  href="/book-flight-ticket/new?flight={{doc.name}}"
+  style="text-decoration: none"
+>
+  <button
+    type="button"
+    style="
+      background-color: blue;
+      color: white;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    "
+  >
+    Book Flight
+  </button>
+</a>
+
+{% endblock %}
